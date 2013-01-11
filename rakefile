@@ -1,0 +1,15 @@
+$:.unshift File.dirname(__FILE__) + 'lib'
+
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new
+task :default => :spec
+
+desc "ejecutar test"
+task :spec do 
+         sh "rspec spec/fraccionarios.rb"
+           end
+desc "ejecutar test con formato html"
+task :thtml do
+         sh "rspec spec/fraccionarios_spec.rb --format html > resultados.html"
+            end
+
